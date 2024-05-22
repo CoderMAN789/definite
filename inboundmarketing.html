@@ -59,9 +59,32 @@
         </div>    
     </div>
     
-    <a class="share">
-        <img class="share" src="img/Share.png">
-    </a>
+    <div class="share">
+        <img src="img/Share.png">
+        <a id="whtspp"></a>
+        <a id="fcbk"></a>
+        <a id="twttr"></a>
+    </div>
+
+    <script>
+        document.querySelector(".share").addEventListener("click", links);
+
+        function links() {
+            const x = document.querySelector("#whtspp");
+            const y = document.querySelector("#fcbk");
+            const z = document.querySelector("#twttr");
+            x.innerHTML = "Whatsapp";
+            y.innerHTML = "Facebook";
+            z.innerHTML = "Twitter"
+            x.addEventListener("click", function() {next(x.innerHTML);});
+            y.addEventListener("click", function() {next(y.innerHTML);});
+            z.addEventListener("click", function() {next(z.innerHTML);});
+        }
+
+        function next(text) {
+            alert('Shared to ' + text);
+        }
+    </script>
 
     <div>
         <h1>Related Picks</h1>
